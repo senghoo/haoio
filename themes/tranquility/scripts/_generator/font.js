@@ -20,7 +20,6 @@ module.exports = function (hexo) {
     const outPath = '/font';
 
     const text = getSubText(hexo);
-    console.log("Extract subfont: ", text);
 
     return style.map(subfont => {
       const source = path.resolve(sourceFolder, `${subfont}.${type}`);
