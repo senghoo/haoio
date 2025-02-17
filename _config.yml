@@ -117,8 +117,6 @@ markdown:
     - markdown-it-abbr
     - markdown-it-footnote
     - markdown-it-ins
-    - markdown-it-sub
-    - markdown-it-sup
     - markdown-it-deflist
     - markdown-it-imsize
     - markdown-it-mark
