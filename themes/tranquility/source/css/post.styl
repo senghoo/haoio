@@ -43,6 +43,39 @@
 .post-content {
   padding: 10px 0;
   margin: 0 auto;
+  .post-content__body {
+    counter-reset section;
+    h1{
+      margin: 1.2em 0 0.6em 0       // 上下外边距可根据需要调整
+      font-size: 2em               // 学术论文中 h1 的字号，可修改为适合的大小
+      font-weight: bold
+      counter-reset subsection    // 每个 h1 开始时重置 h2 的计数器
+      &:before{
+        counter-increment section  // 每遇到一个 h1，就增加 section 计数器
+        content: counter(section) ". "  // 显示“1. ”、“2. ”等
+      }
+    }
+    // h2 样式
+    h2{
+      margin: 1em 0 0.5em 0
+      font-size: 1.5em             // h2 字号
+      counter-reset subsubsection  // 每个 h2 开始时重置 h3 的计数器
+      &:before{
+        counter-increment subsection  // 增加 h2 的计数器
+        content: counter(section) "." counter(subsection) ". "  // 显示“1.1 ”、“1.2 ”等
+      }
+    }
+
+    // h3 样式
+    h3{
+      margin: 0.8em 0 0.4em 0
+      font-size: 1.2em             // h3 字号
+      &:before{
+        counter-increment subsubsection  // 增加 h3 的计数器
+        content: counter(section) "." counter(subsection) "." counter(subsubsection) ". "  // 显示“1.1.1 ”、“1.1.2 ”等
+      }
+    }
+  }
 }
 
 .post-gallery {
