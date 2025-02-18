@@ -50,6 +50,8 @@
       font-size: 2em               // 学术论文中 h1 的字号，可修改为适合的大小
       font-weight: bold
       counter-reset subsection    // 每个 h1 开始时重置 h2 的计数器
+      border-bottom: 1px #ccc solid;
+      padding-bottom: 1vh;
       &:before{
         counter-increment section  // 每遇到一个 h1，就增加 section 计数器
         content: counter(section) ". "  // 显示“1. ”、“2. ”等
